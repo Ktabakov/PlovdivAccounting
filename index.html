@@ -1,9 +1,4 @@
-<!doctype html>
-<!--
-  Пловдив - Счетоводна кантора L. Tabakova
-  Статичен уебсайт, готов за GitHub Pages
-  Всички текстове: български и английски ( езиков превключвател )
--->
+<!DOCTYPE html>
 <html lang="bg">
 <head>
   <meta charset="utf-8">
@@ -13,215 +8,385 @@
   <meta name="author" content="Счетоводна кантора Лилия Табакова">
   <title>Счетоводна кантора — Лилия Табакова | Пловдив</title>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Счетоводна кантора — Лилия Табакова | Пловдив">
-  <meta property="og:description" content="Сигурно и коректно счетоводно обслужване в Пловдив. Услуги: счетоводство, ТРЗ, данъчни декларации, годишно приключване.">
-  <meta property="og:type" content="website">
-
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/styles.css">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
-
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#hero" data-i18n="hero.title.website">Счетоводство Пловдив</a>
-      <nav class="main-nav" id="mainNav">
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a class="brand" href="#hero">
+        <span class="material-symbols-outlined">account_balance</span>
+        <div class="brand-text">
+          <div class="brand-name" data-i18n="hero.title.website">Пловдив Счетоводство</div>
+          <div class="brand-subtitle">Експертен финансов съвет</div>
+        </div>
+      </a>
+
+      <nav id="mainNav">
         <a href="#about" data-i18n="nav.about">За нас</a>
-        <a href="#services" data-i18n="nav.services">Услуги</a>
         <a href="#why" data-i18n="nav.why">Защо нас</a>
+        <a href="#services" data-i18n="nav.services">Услуги</a>
         <a href="#contact" data-i18n="nav.contact">Контакти</a>
       </nav>
+
       <div class="actions">
         <button id="langToggle" class="lang-btn">EN</button>
-        <button class="cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="nav.cta">Свържете се с нас</button>
+        <button class="cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="nav.cta">Свържете се</button>
         <button id="menuToggle" class="menu-toggle" aria-label="Toggle menu">☰</button>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
-    <section id="hero" class="hero">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <h1 data-i18n="hero.title">Сигурно и коректно счетоводно обслужване в Пловдив</h1>
-          <p data-i18n="hero.subtitle">Професионално счетоводно и ТРЗ обслужване за малки и средни фирми, свободни професии и предприемачи.</p>
-          <div class="hero-ctas">
-            <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="hero.cta">Свържете се с нас</button>
-            <a class="btn-secondary" href="#services" data-i18n="hero.services">Нашите услуги</a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <!-- Placeholder for professional photo (replace with real image) -->
-          <img src="assets/images/plovdiv.webp" alt="Професионална снимка" style="width:100%;border-radius:12px;"/>
-        </div>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="hero-bg">
+            <img alt="Plovdiv" src="assets/images/plovdivBig.webp">
+        <div class="hero-gradient absolute inset-0"></div>
       </div>
-    </section>
 
-    <!-- About -->
-    <section id="about" class="about">
-      <div class="container">
-        <h2 data-i18n="about.title">За нас</h2>
-        <div class="about-grid">
-          <div class="about-text">
-            <p data-i18n="about.text1">Счетоводна кантора с дългогодишен опит в обслужване на клиенти от различни сфери. Ние предлагаме индивидуален подход, коректност и спазване на срокове. Главен счетоводител: Лилия Табакова.</p>
-            <p data-i18n="about.text2">Работим с малки и средни предприятия, свободни професии и предприемачи, като осигуряваме конфиденциалност и актуално спазване на българското законодателство.</p>
-            <!-- <p class="muted">Място за по-подробна биография и професионална снимка (placeholder).</p> -->
-          </div>
-          <div class="about-photo">
-            <div class="photo-frame"><img src="assets/images/tabakova.webp" alt="Професионална снимка" style="width:100%;height:100%;object-fit:contain;border-radius:8px"/></div>
+      <div class="hero-content">
+        <div class="hero-inner">
+          <!-- <div class="hero-badge">
+            <span></span>
+            <span class="hero-badge-text" data-i18n="hero.badge">Доверен партньор от 2004</span>
+          </div> -->
+
+          <h1 class="hero-title">
+            <span data-i18n="hero.title.line1">Отличие във</span><br/>
+            <span data-i18n="hero.title.line2">финансовото управление</span>
+          </h1>
+          <p class="hero-description" data-i18n="hero.description">Професионални счетоводни решения за бизнеса в Пловдив. Прецизност, коректност и яснота на всяка стъпка.</p>
+          <div class="hero-buttons">
+            <button class="hero-btn hero-btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="hero.cta">
+              Резервирайте консултация
+              <span class="material-symbols-outlined">event_available</span>
+            </button>
+            <button class="hero-btn hero-btn-secondary" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})" data-i18n="hero.approach">Нашия подход</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Services -->
-    <section id="services" class="services">
-      <div class="container">
-        <h2 data-i18n="services.title">Услуги</h2>
+    <!-- TESTIMONIAL SECTION -->
+    <section class="testimonial-section">
+      <div class="testimonial-container">
+        <div class="testimonial-content">
+          <div class="testimonial-left">
+            <div class="testimonial-image">
+              <img alt="Лилия Табакова" src="assets/images/tabakova.webp">
+              <div class="testimonial-badge">
+                <span class="material-symbols-outlined">verified</span>
+              </div>
+            </div>
+            <div class="testimonial-text">
+              <p class="testimonial-quote" data-i18n="testimonial.quote">Точност. Коректност. Доверие.</p>
+              <p class="testimonial-author">
+                <span data-i18n="testimonial.name">Лилия Табакова</span>,
+                <span data-i18n="testimonial.role">Главен счетоводител</span>
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-divider"></div>
+          <p class="testimonial-desc" data-i18n="testimonial.desc">Дългогодишен професионален опит и индивидуален подход.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+      <div class="about-container">
+        <div class="about-content">
+          <div>
+            <span class="about-label" data-i18n="about.label">Нашето наследство</span>
+            <h2 class="about-title" data-i18n="about.title">Над 20 години финансово отличие</h2>
+          </div>
+
+          <div class="about-text" data-i18n-content="about.text">
+            <p data-i18n="about.p1">Нашата кантора работи с фирми и предприемачи в региона вече повече от 20 години, като се стреми към яснота, прецизност и коректност във всяка финансова стъпка, за да могат клиентите ни да взимат сигурни решения за бизнеса си.</p>
+            <p data-i18n="about.p2">Комбинираме утвърдени счетоводни практики с модерни дигитални инструменти, за да осигурим бързо и надеждно обслужване, като всеки клиент получава лично отношение и подкрепа, базирана на дългогодишен опит и професионализъм.</p>
+          </div>
+
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number">500+</span>
+              <span class="stat-label" data-i18n="about.stat1">Клиенти</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">20+</span>
+              <span class="stat-label" data-i18n="about.stat2">Години</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">100%</span>
+              <span class="stat-label" data-i18n="about.stat3">Точност</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-image-container">
+          <div class="about-image">
+            <img alt="Plovdiv" src="assets/images/plovdiv.webp">
+            <div class="about-image-overlay"></div>
+            <p class="about-image-text" data-i18n="about.imageText">Наследство на доверие в сърцето на Пловдив.</p>
+          </div>
+          <div class="about-decoration"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section id="why" style="width: 100%; padding: 8rem 1.5rem; background-color: var(--color-white);">
+      <div style="max-width: 80rem; margin: 0 auto;">
+        <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 4rem;">
+          <span style="color: var(--color-accent-gold); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; font-size: 1rem;" data-i18n="why.title">Защо да изберете нас</span>
+          <!-- <h2 style="color: var(--color-navy); font-size: 2.25rem; font-weight: 700; font-family: 'Playfair Display', serif;">20+ години опит</h2>
+          <p style="color: var(--color-slate-grey); max-width: 28rem; font-weight: 300;">20+ години опит, над 150 доволни клиента</p> -->
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+          <div style="border-radius: 0.5rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); padding: 2rem; background-color: var(--color-primary-bg); border: 1px solid var(--color-gray-200);" class="feature">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem; display: block;">🏆</div>
+            <h4 style="font-size: 1rem; font-weight: 700; color: var(--color-navy); margin-bottom: 0.5rem; font-family: 'Playfair Display', serif;" data-i18n="feature.experience.title">Опит и надеждност</h4>
+            <p style="margin: 0; color: var(--color-slate-grey); font-size: 0.95rem; line-height: 1.6;" data-i18n="feature.experience">Дългогодишна практика и множество доволни клиенти.</p>
+          </div>
+
+          <div style="border-radius: 0.5rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); padding: 2rem; background-color: var(--color-primary-bg); border: 1px solid var(--color-gray-200);" class="feature">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem; display: block;">🔒</div>
+            <h4 style="font-size: 1rem; font-weight: 700; color: var(--color-navy); margin-bottom: 0.5rem; font-family: 'Playfair Display', serif;" data-i18n="feature.trust.title">Коректност и конфиденциалност</h4>
+            <p style="margin: 0; color: var(--color-slate-grey); font-size: 0.95rem; line-height: 1.6;" data-i18n="feature.trust">Висок стандарт на защита на клиентските данни.</p>
+          </div>
+
+          <div style="border-radius: 0.5rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); padding: 2rem; background-color: var(--color-primary-bg); border: 1px solid var(--color-gray-200);" class="feature">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem; display: block;">🤝</div>
+            <h4 style="font-size: 1rem; font-weight: 700; color: var(--color-navy); margin-bottom: 0.5rem; font-family: 'Playfair Display', serif;" data-i18n="feature.communication.title">Лична комуникация</h4>
+            <p style="margin: 0; color: var(--color-slate-grey); font-size: 0.95rem; line-height: 1.6;" data-i18n="feature.communication">Бърз и човечен контакт с вашия счетоводител.</p>
+          </div>
+
+          <div style="border-radius: 0.5rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); padding: 2rem; background-color: var(--color-primary-bg); border: 1px solid var(--color-gray-200);" class="feature">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem; display: block;">📚</div>
+            <h4 style="font-size: 1rem; font-weight: 700; color: var(--color-navy); margin-bottom: 0.5rem; font-family: 'Playfair Display', serif;" data-i18n="feature.knowledge.title">Актуални познания</h4>
+            <p style="margin: 0; color: var(--color-slate-grey); font-size: 0.95rem; line-height: 1.6;" data-i18n="feature.law">Постоянно следене на промените в българското законодателство.</p>
+          </div>
+
+          <div style="border-radius: 0.5rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); padding: 2rem; background-color: var(--color-primary-bg); border: 1px solid var(--color-gray-200);" class="feature">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem; display: block;">📍</div>
+            <h4 style="font-size: 1rem; font-weight: 700; color: var(--color-navy); margin-bottom: 0.5rem; font-family: 'Playfair Display', serif;" data-i18n="feature.local.title">Локално обслужване</h4>
+            <p style="margin: 0; color: var(--color-slate-grey); font-size: 0.95rem; line-height: 1.6;" data-i18n="feature.local">Работим с клиенти в Пловдив и региона.</p>
+          </div>
+
+          <div style="border-radius: 0.5rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); padding: 2rem; background-color: var(--color-primary-bg); border: 1px solid var(--color-gray-200);" class="feature">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem; display: block;">💡</div>
+            <h4 style="font-size: 1rem; font-weight: 700; color: var(--color-navy); margin-bottom: 0.5rem; font-family: 'Playfair Display', serif;" data-i18n="feature.practical.title">Практични решения</h4>
+            <p style="margin: 0; color: var(--color-slate-grey); font-size: 0.95rem; line-height: 1.6;" data-i18n="feature.practical">Индивидуален подход и ясни, приложими съвети за вашия бизнес.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="services-section">
+      <div class="services-container">
+        <div class="services-header">
+          <div class="services-title-group">
+            <span class="services-label" data-i18n="services.title">Услуги</span>
+            <!-- <h2 class="services-title" data-i18n="services.title">Разнообразни счетоводни решения</h2> -->
+          </div>
+          <!-- <p class="services-desc">Комплексни счетоводни услуги за всички видове предприятия</p> -->
+        </div>
+
         <div class="services-grid">
-          <article class="service-card">
-            <div class="icon">📊</div>
-            <h3 data-i18n="service.accounting.title">Счетоводство</h3>
-            <p data-i18n="service.accounting.desc">Обработка на първични и вторични документи, издаване на електронни фактури, подготовка на справки и декларации по ДДС. Включва електронно интернет банкиране, подготовка на данъчни декларации и комуникация с НАП и НОИ.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="icon">👥</div>
-            <h3 data-i18n="service.payroll.title">ТРЗ и работни заплати</h3>
-            <p data-i18n="service.payroll.desc">Изготвяне на ведомости за заплати и осигуровки, назначаване, освобождаване и оформяне на трудови досиета, подготовка на платежи за осигуровки, подаване на Декларации обр. 1 и 6, обработка и подаване на болнични.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="icon">📅</div>
-            <h3 data-i18n="service.closing.title">Годишно приключване</h3>
-            <p data-i18n="service.closing.desc">Извършваме пълно годишно счетоводно приключване с подготовка на финансови отчети, анализ на резултатите за годината и подаване на необходимите документи към данъчните органи. Целта ни е да завършите финансовата година без изненади.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="icon">🧾</div>
-            <h3 data-i18n="service.tax.title">Данъчни декларации</h3>
-            <p data-i18n="service.tax.desc">Изготвяме и подаваме годишни и месечни данъчни декларации за физически и юридически лица. Ние се грижим за правилното отчитане на приходи, разходи и данъчни задължения, минимизирайки рисковете.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="icon">🔄</div>
-            <h3 data-i18n="service.ongoing.title">Текущо обслужване</h3>
-            <p data-i18n="service.ongoing.desc">Предлагаме текущо счетоводно обслужване за самоосигуряващи се лица, малки и средни предприятия. Осигуряваме точно водене на счетоводни книги, отразяване на финансови операции и спазване на законодателството.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="icon">📞</div>
-            <h3 data-i18n="service.consult.title">Консултации</h3>
-            <p data-i18n="service.consult.desc">Осигуряваме експертни консултации по счетоводство, данъци и трудово право. Помагаме при изчисляване на социални и здравни осигуровки, данъци върху доходите, и други задължения. Получаване на документи по Viber и имейл.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why choose us -->
-    <section id="why" class="why">
-      <div class="container">
-        <h2 data-i18n="why.title">Защо да изберете нас</h2>
-        <div class="features">
-          <div class="feature">
-            <div class="f-icon">⭐</div>
-            <h4 data-i18n="feature.milestone.title">20+ години опит</h4>
-            <p data-i18n="feature.milestone">20+ години опит, над 150 доволни клиента</p>
+          <div class="service-card">
+            <span class="service-icon">📊</span>
+            <h3 class="service-title" data-i18n="service.accounting.title">Счетоводство</h3>
+            <p class="service-desc" data-i18n="service.accounting.desc">Обработка на първични и вторични документи, издаване на електронни фактури, подготовка на справки и декларации по ДДС. Включва електронно интернет банкиране, подготовка на данъчни декларации и комуникация с НАП и НОИ.</p>
+            <!-- <a href="#contact" class="service-link">Детайли на услугата <span class="material-symbols-outlined">arrow_forward</span></a> -->
           </div>
-          <div class="feature">
-            <div class="f-icon">🏆</div>
-            <h4 data-i18n="feature.experience.title">Опит и надеждност</h4>
-            <p data-i18n="feature.experience">Дългогодишна практика и множество доволни клиенти.</p>
+
+          <div class="service-card">
+            <span class="service-icon">👥</span>
+            <h3 class="service-title" data-i18n="service.payroll.title">ТРЗ и работни заплати</h3>
+            <p class="service-desc" data-i18n="service.payroll.desc">Изготвяне на ведомости за заплати и осигуровки, назначаване, освобождаване и оформяне на трудови досиета, подготовка на платежи за осигуровки, подаване на Декларации обр. 1 и 6, обработка и подаване на болнични.</p>
+            <!-- <a href="#contact" class="service-link">Детайли на услугата <span class="material-symbols-outlined">arrow_forward</span></a> -->
           </div>
-          <div class="feature">
-            <div class="f-icon">🔒</div>
-            <h4 data-i18n="feature.trust.title">Коректност и конфиденциалност</h4>
-            <p data-i18n="feature.trust">Висок стандарт на защита на клиентските данни.</p>
+
+          <div class="service-card">
+            <span class="service-icon">📅</span>
+            <h3 class="service-title" data-i18n="service.closing.title">Годишно приключване</h3>
+            <p class="service-desc" data-i18n="service.closing.desc">Извършваме пълно годишно счетоводно приключване с подготовка на финансови отчети, анализ на резултатите за годината и подаване на необходимите документи към данъчните органи. Целта ни е да завършите финансовата година без изненади.</p>
+            <!-- <a href="#contact" class="service-link">Детайли на услугата <span class="material-symbols-outlined">arrow_forward</span></a> -->
           </div>
-          <div class="feature">
-            <div class="f-icon">🤝</div>
-            <h4 data-i18n="feature.communication.title">Лична комуникация</h4>
-            <p data-i18n="feature.communication">Бърз и човечен контакт с вашия счетоводител.</p>
+
+          <div class="service-card">
+            <span class="service-icon">🧾</span>
+            <h3 class="service-title" data-i18n="service.tax.title">Данъчни декларации</h3>
+            <p class="service-desc" data-i18n="service.tax.desc">Изготвяме и подаваме годишни и месечни данъчни декларации за физически и юридически лица. Ние се грижим за правилното отчитане на приходи, разходи и данъчни задължения, минимизирайки рисковете.</p>
+            <!-- <a href="#contact" class="service-link">Детайли на услугата <span class="material-symbols-outlined">arrow_forward</span></a> -->
           </div>
-          <div class="feature">
-            <div class="f-icon">📚</div>
-            <h4 data-i18n="feature.knowledge.title">Актуални познания</h4>
-            <p data-i18n="feature.law">Постоянно следене на промените в българското законодателство.</p>
+
+          <div class="service-card">
+            <span class="service-icon">🔄</span>
+            <h3 class="service-title" data-i18n="service.ongoing.title">Текущо обслужване</h3>
+            <p class="service-desc" data-i18n="service.ongoing.desc">Предлагаме текущо счетоводно обслужване за самоосигуряващи се лица, малки и средни предприятия. Осигуряваме точно водене на счетоводни книги, отразяване на финансови операции и спазване на законодателството.</p>
+            <!-- <a href="#contact" class="service-link">Детайли на услугата <span class="material-symbols-outlined">arrow_forward</span></a> -->
           </div>
-          <div class="feature">
-            <div class="f-icon">📍</div>
-            <h4 data-i18n="feature.local.title">Локално обслужване</h4>
-            <p data-i18n="feature.local">Работим с клиенти в Пловдив и региона.</p>
+
+          <div class="service-card">
+            <span class="service-icon">📞</span>
+            <h3 class="service-title" data-i18n="service.consult.title">Консултации</h3>
+            <p class="service-desc" data-i18n="service.consult.desc">Осигуряваме експертни консултации по счетоводство, данъци и трудово право. Помагаме при изчисляване на социални и здравни осигуровки, данъци върху доходите, и други задължения. Получаване на документи по Viber и имейл.</p>
+            <!-- <a href="#contact" class="service-link">Детайли на услугата <span class="material-symbols-outlined">arrow_forward</span></a> -->
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2 data-i18n="contact.title">Контакти</h2>
-        <div class="contact-grid">
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+      <div class="cta-decorations">
+        <div class="cta-decoration cta-decoration-1"></div>
+        <div class="cta-decoration cta-decoration-2"></div>
+      </div>
+
+      <div class="cta-container">
+        <h3 class="cta-title" data-i18n="cta.title">Имате въпроси относно вашето счетоводство?</h3>
+        <!-- <p class="cta-desc" data-i18n="cta.desc">Присъединете се към най-успешните фирми в Пловдив и преживейте партньорски подход към счетоводството.</p> -->
+
+        <div class="cta-buttons">
+          <button class="cta-btn cta-btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="cta.button">Резервирайте консултация</button>
+          <!-- <button class="cta-btn cta-btn-secondary" data-i18n="cta.packages">Вижте пакети</button> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+      <div class="contact-container">
+        <h2 class="contact-title" data-i18n="contact.title">Контакти</h2>
+
+        <div class="contact-content">
           <div class="contact-info">
-           <p>
-             <strong data-i18n="contact.city">Град:</strong> 
-             <span data-i18n="contact.cityname">Пловдив</span>
-            </p>
-            <p><strong data-i18n="contact.phone">Телефон:</strong> <a href="tel:+35989505664">+35989505664</a></p>
-            <p><strong data-i18n="contact.email">Имейл:</strong> <a href="mailto:liliatabakova34@gmail.com">liliatabakova34@gmail.com</a></p>
-            <p>
-             <strong data-i18n="contact.hours">Работно време:</strong> 
-             <span data-i18n="contact.hours.times">Пн–Пт 09:00–17:00</span>
-            </p>
-            <p class="muted" data-i18n="contact.info">Свържете се с нас за безплатна първоначална консултация.</p>
-          </div>
-
-          <form id="contactForm" class="contact-form" novalidate action="https://formspree.io/f/your-form-id" method="POST">
-            <!-- Replace the action with your Formspree or FormSubmit endpoint -->
-            <input type="hidden" name="_subject" value="Запитване от уебсайт — Кантора Табакова">
-            <label for="name" data-i18n="form.name">Име</label>
-            <input type="text" id="name" name="name" data-placeholder="form.placeholder.name" required>
-
-            <label for="email" data-i18n="form.email">Имейл</label>
-            <input type="email" id="email" name="email" data-placeholder="form.placeholder.email" required>
-
-            <label for="phone" data-i18n="form.phone">Телефон</label>
-            <input type="tel" id="phone" name="phone" data-placeholder="form.placeholder.phone"
-
-            <label for="message" data-i18n="form.message">Съобщение</label>
-            <textarea id="message" name="message" rows="5" data-placeholder="form.placeholder.message" required></textarea>
-
-            <div class="form-actions">
-              <button type="submit" class="btn-primary" data-i18n="contact.send">Изпрати</button>
-              <button type="reset" class="btn-secondary" data-i18n="contact.reset">Изчисти</button>
+            <div class="contact-group">
+              <label class="contact-label" data-i18n="contact.phone.label">Телефон</label>
+              <a href="tel:+359326000000" class="contact-text">+359 32 600 000</a>
             </div>
 
-            <p class="form-note muted" data-i18n="contact.submit">При изпращане ще получите потвърждение на екрана.</p>
+            <div class="contact-group">
+              <label class="contact-label" data-i18n="contact.email.label">Имейл</label>
+              <a href="mailto:info@accounting.bg" class="contact-text">info@accounting.bg</a>
+            </div>
+
+            <div class="contact-group">
+              <label class="contact-label" data-i18n="contact.address.label">Адрес</label>
+              <p class="contact-text" data-i18n="contact.address.value">
+                ул. „Гладстон" 123, Център<br>
+                Пловдив 4000, България
+              </p>
+            </div>
+
+            <div class="contact-group">
+              <label class="contact-label" data-i18n="contact.hours.label">Работно време</label>
+              <p class="contact-text" data-i18n="contact.hours.value">Пн - Пт: 09:00 - 18:00</p>
+            </div>
+          </div>
+
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="name" class="form-label" data-i18n="form.name">Име</label>
+              <input type="text" id="name" name="name" required class="form-input" data-i18n-placeholder="form.placeholder.name">
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label" data-i18n="form.email">Имейл</label>
+              <input type="email" id="email" name="email" required class="form-input" data-i18n-placeholder="form.placeholder.email">
+            </div>
+
+            <div class="form-group">
+              <label for="subject" class="form-label" data-i18n="form.subject">Предмет</label>
+              <input type="text" id="subject" name="subject" required class="form-input" data-i18n-placeholder="form.placeholder.subject">
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label" data-i18n="form.message">Съобщение</label>
+              <textarea id="message" name="message" required class="form-textarea" data-i18n-placeholder="form.placeholder.message"></textarea>
+            </div>
+
+            <div class="form-buttons">
+              <button type="submit" class="form-btn form-btn-submit" data-i18n="form.submit">Изпрати</button>
+              <button type="reset" class="form-btn form-btn-reset" data-i18n="form.reset">Изчисти</button>
+            </div>
+
+            <p class="form-note" data-i18n="form.note">При изпращане ще получите потвърждение на екрана.</p>
           </form>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> <span data-i18n="contact.footer.copyright">Счетоводна кантора — Лилия Табакова. Всички права запазени.</span></p>
-      <nav class="footer-nav">
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo">
+          <span class="footer-logo-icon material-symbols-outlined">account_balance</span>
+          <span class="footer-logo-text" data-i18n="footer.company">Пловдив Счетоводство</span>
+        </a>
+        <p class="footer-description" data-i18n="footer.description">
+          Предоставяме най-високите стандарти на финансова честност и професионален съвет в Пловдив от 2004 г. Вашият партньор за просперитет.
+        </p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" title="Website">
+            <span class="material-symbols-outlined">language</span>
+          </a>
+          <a href="mailto:info@accounting.bg" class="footer-social-link" title="Email">
+            <span class="material-symbols-outlined">alternate_email</span>
+          </a>
+          <a href="#" class="footer-social-link" title="Location">
+            <span class="material-symbols-outlined">location_on</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="footer-section-title" data-i18n="footer.quickLinks">Бързи връзки</h4>
+        <ul class="footer-list">
+          <li><a href="#about" data-i18n="footer.about">За нашата фирма</a></li>
+          <li><a href="#services" data-i18n="footer.services">Нашите услуги</a></li>
+          <li><a href="#" data-i18n="footer.news">Последни новини</a></li>
+          <li><a href="#contact" data-i18n="footer.contact">Клиентска зона</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="footer-section-title" data-i18n="footer.contactInfo">Контактна информация</h4>
+        <p class="footer-contact-info">
+          ул. „Гладстон" 123, Център<br>
+          Пловдив 4000, България
+        </p>
+        <div class="footer-hours">
+          <p>+359 32 600 000</p>
+          <p style="margin-top: 0.5rem;" data-i18n="footer.hours">Пн - Пт: 09:00 - 18:00</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright" data-i18n="contact.footer.copyright">© <span id="year">2024</span> Пловдив Счетоводство ООД. Всички права запазени.</p>
+      <div class="footer-links">
         <a href="privacy.html" data-i18n="contact.footer.privacy">Политика за поверителност</a>
-      </nav>
+        <a href="#" data-i18n="footer.terms">Условия и положения</a>
+      </div>
     </div>
   </footer>
 
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
+  <!-- Scripts -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>
