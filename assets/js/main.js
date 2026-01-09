@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function(){
       'nav.why':'Why Us',
       'nav.contact':'Contact',
       'nav.cta':'Contact Us',
-      'hero.title.website':'Tabakova Accounting',
+      'hero.title.website':'Plovdiv Accounting',
       'hero.title':'Secure and reliable accounting services in Plovdiv',
       'hero.subtitle':'Professional accounting and payroll services for SMEs and entrepreneurs.',
       'hero.cta':'Contact us',
