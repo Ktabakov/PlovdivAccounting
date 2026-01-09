@@ -46,7 +46,7 @@ body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;color:var(--color-ink
 .about h2{font-size:2rem;margin-bottom:30px;color:var(--color-primary)}
 .about-grid{display:grid;grid-template-columns:1fr 240px;gap:24px;align-items:start}
 .about-text p{margin-bottom:14px;line-height:1.8}
-.about-photo .photo-frame{height:240px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--color-muted);background:#f3f4f6;overflow:hidden}
+.about-photo .photo-frame{height:240px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--color-muted);overflow:hidden}
 
 /* Services */
 .services{padding:64px 0;background:var(--color-light)}
