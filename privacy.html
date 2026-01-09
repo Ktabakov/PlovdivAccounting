@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Политика за поверителност — Счетоводна кантора Лилия Табакова">
+  <title>Политика за поверителност</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <style>
+    .privacy-container{max-width:800px;margin:0 auto;padding:40px 20px}
+    .privacy-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px;padding-bottom:20px}
+    .back-link{color:var(--color-primary);text-decoration:none;font-weight:500}
+    .back-link:hover{color:var(--color-accent)}
+    .privacy-section{margin-bottom:28px}
+    .privacy-section h2{font-size:1.3rem;color:var(--color-primary);margin-bottom:10px}
+    .privacy-section p{color:var(--color-muted);line-height:1.7;margin-bottom:8px}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Счетоводство Пловдив</a>
+      <div class="actions">
+        <button id="langToggle" class="lang-btn">EN</button>
+        <a href="index.html" class="back-link">← Назад</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="privacy-container">
+      <h1 data-i18n="privacy.title">Политика за поверителност</h1>
+
+      <div class="privacy-section">
+        <h2 data-i18n="privacy.info.title">Какви данни събираме</h2>
+        <p data-i18n="privacy.info.text">Събираме вашите лични данни (име, телефон, имейл) и счетоводни данни (документи, отчети) които сте дали за обслужване.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2 data-i18n="privacy.use.title">Как използваме данните</h2>
+        <p data-i18n="privacy.use.text">Използваме вашите данни само за предоставяне на счетоводни услуги и отговор на вашите запитвания. Никога не продаваме данни на трети страни.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2 data-i18n="privacy.legal.title">Правни задължения</h2>
+        <p data-i18n="privacy.legal.text">По закон трябва да изпращаме счетоводни данни на НАП, НОИ и други органи. Това е необходимо и законно.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2 data-i18n="privacy.security.title">Защита на данните</h2>
+        <p data-i18n="privacy.security.text">Пазим вашите данни конфиденциално. Документите се пазят безопасно.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2 data-i18n="privacy.contact.title">Контакт</h2>
+        <p>
+          <strong>Имейл:</strong> <a href="mailto:liliatabakova34@gmail.com">liliatabakova34@gmail.com</a><br>
+          <strong>Телефон:</strong> <a href="tel:+35989505664">+35989505664</a>
+        </p>
+      </div>
+
+      <p style="color:var(--color-muted);font-size:0.9rem;margin-top:40px;border-top:1px solid #e6eef8;padding-top:20px;">
+        <span data-i18n="privacy.updated">Актуализирано:</span> януари 2026
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> <span data-i18n="footer.copyright">Счетоводна кантора — Лилия Табакова. Всички права запазени.</span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    var lang = 'bg';
+    var translations = {
+      en: {
+        'privacy.title': 'Privacy Policy',
+        'privacy.info.title': 'What information we collect',
+        'privacy.info.text': 'We collect your personal information (name, phone, email) and accounting data (documents, reports) that you provide for service.',
+        'privacy.use.title': 'How we use your data',
+        'privacy.use.text': 'We use your data only to provide accounting services and respond to your inquiries. We never sell data to third parties.',
+        'privacy.legal.title': 'Legal requirements',
+        'privacy.legal.text': 'By law, we must submit accounting data to tax authorities and other government bodies. This is necessary and legal.',
+        'privacy.security.title': 'Data protection',
+        'privacy.security.text': 'We keep your data confidential. Documents are stored securely.',
+        'privacy.contact.title': 'Contact',
+        'privacy.updated': 'Updated:',
+        'footer.copyright': 'Accounting Office — Liliya Tabakova. All rights reserved.'
+      }
+    };
+
+    document.getElementById('langToggle').addEventListener('click', function(){
+      lang = (lang === 'bg') ? 'en' : 'bg';
+      this.textContent = (lang === 'bg') ? 'EN' : 'BG';
+      if(lang === 'en') applyTranslations(translations.en);
+      else location.reload();
+    });
+
+    function applyTranslations(map){
+      document.querySelectorAll('[data-i18n]').forEach(function(el){
+        var key = el.getAttribute('data-i18n');
+        if(map[key]) el.textContent = map[key];
+      });
+    }
+  </script>
+</body>
+</html>
+
