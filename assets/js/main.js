@@ -5,13 +5,22 @@ document.addEventListener('DOMContentLoaded', function(){
   // Set current year in footer
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Mobile menu toggle
+  // Mobile menu toggle with proper class handling
   var menuToggle = document.getElementById('menuToggle');
   var mainNav = document.getElementById('mainNav');
-  menuToggle && menuToggle.addEventListener('click', function(){
-    if(mainNav.style.display === 'flex') mainNav.style.display = 'none';
-    else mainNav.style.display = 'flex';
-  });
+  if(menuToggle){
+    menuToggle.addEventListener('click', function(){
+      mainNav.classList.toggle('active');
+      this.textContent = mainNav.classList.contains('active') ? '✕' : '☰';
+    });
+    // Close menu when clicking on a nav link
+    mainNav.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        mainNav.classList.remove('active');
+        menuToggle.textContent = '☰';
+      });
+    });
+  }
 
   // Simple language toggle (BG <-> EN). Complete translations for full site.
   var lang = 'bg';

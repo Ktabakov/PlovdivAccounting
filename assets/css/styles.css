@@ -91,25 +91,91 @@ body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;color:var(--color-ink
 @media (max-width:1024px){
   .services-grid{grid-template-columns:repeat(2,1fr)}
   .features{grid-template-columns:repeat(2,1fr)}
+  .hero-inner{gap:24px}
+  .hero-text h1{font-size:2.2rem}
 }
 
 @media (max-width:768px){
-  .hero-inner{grid-template-columns:1fr}
-  .hero-text h1{font-size:2rem}
-  .about-grid{grid-template-columns:1fr}
-  .services-grid{grid-template-columns:1fr}
-  .features{grid-template-columns:1fr}
-  .contact-grid{grid-template-columns:1fr}
-  .main-nav{display:none}
-  .menu-toggle{display:inline-block;background:transparent;border:none;cursor:pointer;font-size:1.5rem}
+  .container{padding:0 16px}
+  .hero{padding:60px 0}
+  .hero-inner{grid-template-columns:1fr;gap:20px}
+  .hero-text h1{font-size:1.8rem;margin-bottom:10px}
+  .hero-text p{font-size:0.95rem;margin-bottom:14px}
+  .photo-placeholder{height:240px}
+  .about{padding:48px 0}
+  .about h2{font-size:1.6rem;margin-bottom:20px}
+  .about-grid{grid-template-columns:1fr;gap:20px}
+  .about-text p{margin-bottom:10px}
+  .about-photo .photo-frame{height:200px}
+  .services{padding:48px 0}
+  .services h2{font-size:1.6rem}
+  .services-grid{grid-template-columns:1fr;gap:16px}
+  .service-card{padding:18px}
+  .service-card h3{font-size:1rem}
+  .service-card p{font-size:0.9rem}
+  .why{padding:48px 0}
+  .why h2{font-size:1.6rem}
+  .features{grid-template-columns:1fr;gap:16px}
+  .feature{padding:18px}
+  .feature h4{font-size:0.95rem;margin:10px 0 6px}
+  .feature p{font-size:0.9rem}
+  .contact{padding:48px 0}
+  .contact h2{font-size:1.6rem}
+  .contact-grid{grid-template-columns:1fr;gap:20px}
+  .main-nav{display:none;flex-direction:column;position:absolute;top:50px;left:0;right:0;background:#fff;border-bottom:1px solid #e6eef8;padding:10px 0;z-index:30}
+  .main-nav.active{display:flex}
+  .main-nav a{padding:8px 20px;border-bottom:1px solid #f3f4f6}
+  .menu-toggle{display:inline-block;background:transparent;border:none;cursor:pointer;font-size:1.5rem;padding:4px 8px}
+  .hero-ctas{flex-direction:column}
+  .btn-primary,.btn-secondary{width:100%;text-align:center}
 }
 
 @media (max-width:480px){
-  .hero{padding:48px 0}
-  .hero-text h1{font-size:1.6rem}
-  .services{padding:48px 0}
-  .why{padding:48px 0}
-  .contact{padding:48px 0}
+  .container{padding:0 12px}
+  .header-inner{padding:10px 0}
+  .brand{font-size:1rem}
+  .actions{gap:6px}
+  .cta{padding:6px 10px;font-size:0.85rem;display:none}
+  .lang-btn{padding:5px 6px;font-size:0.8rem}
+  .hero{padding:40px 0;min-height:auto}
+  .hero-text h1{font-size:1.4rem;margin-bottom:8px}
+  .hero-text p{font-size:0.9rem;margin-bottom:12px}
+  .btn-primary,.btn-secondary{padding:10px 12px;font-size:0.9rem}
+  .photo-placeholder{height:200px}
+  .about{padding:36px 0}
+  .about h2{font-size:1.4rem;margin-bottom:16px}
+  .about-photo .photo-frame{height:160px}
+  .about-text p{font-size:0.9rem;margin-bottom:8px}
+  .services{padding:36px 0}
+  .services h2{font-size:1.4rem;margin-bottom:16px}
+  .service-card{padding:14px;border-radius:8px}
+  .service-card .icon{font-size:28px}
+  .service-card h3{font-size:0.95rem;margin:8px 0}
+  .service-card p{font-size:0.85rem}
+  .why{padding:36px 0}
+  .why h2{font-size:1.4rem;margin-bottom:16px}
+  .feature{padding:14px}
+  .feature .f-icon{font-size:24px}
+  .feature h4{font-size:0.9rem;margin:8px 0 4px}
+  .feature p{font-size:0.85rem}
+  .contact{padding:36px 0}
+  .contact h2{font-size:1.4rem;margin-bottom:16px}
+  .contact-info p{margin:8px 0;font-size:0.9rem}
+  .contact-form input,.contact-form textarea{padding:8px 10px;font-size:0.9rem}
+  .contact-form label{font-size:0.9rem}
+  .form-actions{flex-direction:column;gap:8px}
+  .btn-primary,.btn-secondary{width:100%}
+  .form-note{font-size:0.8rem}
+  .footer-inner{flex-direction:column;gap:10px;text-align:center;font-size:0.85rem}
+  .toast{right:10px;bottom:10px;padding:10px 12px;font-size:0.9rem}
+}
+
+@media (max-width:320px){
+  .hero-text h1{font-size:1.2rem}
+  .btn-primary,.btn-secondary{font-size:0.8rem;padding:8px 10px}
+  .service-card{padding:12px}
+  .service-card h3{font-size:0.9rem}
+  .service-card p{font-size:0.8rem}
 }
 
 /* Toast */
