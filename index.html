@@ -1,0 +1,210 @@
+<!doctype html>
+<!--
+  Пловдив - Счетоводна кантора L. Tabakova
+  Статичен уебсайт, готов за GitHub Pages
+  Всички текстове: български и английски ( езиков превключвател )
+-->
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Счетоводна кантора в Пловдив – сигурно и коректно счетоводно обслужване. Лилия Табакова, професионално счетоводство за малки и средни предприятия.">
+  <meta name="keywords" content="счетоводство, Пловдив, ТРЗ, данъчни декларации, годишно приключване">
+  <meta name="author" content="Счетоводна кантора Лилия Табакова">
+  <title>Счетоводна кантора — Лилия Табакова | Пловдив</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Счетоводна кантора — Лилия Табакова | Пловдив">
+  <meta property="og:description" content="Сигурно и коректно счетоводно обслужване в Пловдив. Услуги: счетоводство, ТРЗ, данъчни декларации, годишно приключване.">
+  <meta property="og:type" content="website">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#hero">Кантора Табакова</a>
+      <nav class="main-nav" id="mainNav">
+        <a href="#about" data-i18n="nav.about">За нас</a>
+        <a href="#services" data-i18n="nav.services">Услуги</a>
+        <a href="#why" data-i18n="nav.why">Защо нас</a>
+        <a href="#contact" data-i18n="nav.contact">Контакти</a>
+      </nav>
+      <div class="actions">
+        <button id="langToggle" class="lang-btn">EN</button>
+        <button class="cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="nav.cta">Свържете се с нас</button>
+        <button id="menuToggle" class="menu-toggle" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 data-i18n="hero.title">Сигурно и коректно счетоводно обслужване в Пловдив</h1>
+          <p data-i18n="hero.subtitle">Професионално счетоводно и ТРЗ обслужване за малки и средни фирми, свободни професии и предприемачи.</p>
+          <div class="hero-ctas">
+            <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="hero.cta">Свържете се с нас</button>
+            <a class="btn-secondary" href="#services" data-i18n="hero.services">Нашите услуги</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <!-- Placeholder for professional photo (replace with real image) -->
+          <img src="assets/images/plovdiv.webp" alt="Професионална снимка" style="width:100%;border-radius:12px;"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 data-i18n="about.title">За нас</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>Счетоводна кантора с дългогодишен опит в обслужване на клиенти от различни сфери. Ние предлагаме индивидуален подход, коректност и спазване на срокове. Главен счетоводител: <strong>Лилия Табакова</strong>.</p>
+            <p>Работим с малки и средни предприятия, свободни професии и предприемачи, като осигуряваме конфиденциалност и актуално спазване на българското законодателство.</p>
+            <p class="muted">Място за по-подробна биография и професионална снимка (placeholder).</p>
+          </div>
+          <div class="about-photo">
+            <div class="photo-frame"><img src="assets/images/tabakova.webp" alt="Професионална снимка" style="width:100%;height:100%;object-fit:cover;border-radius:8px"/></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2 data-i18n="services.title">Услуги</h2>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="icon">📊</div>
+            <h3 data-i18n="service.accounting.title">Счетоводство</h3>
+            <p data-i18n="service.accounting.desc">Пълно счетоводно обслужване: дневници, баланс, отчетни документи. Полза: спокойствие и точни финансови отчети.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">👥</div>
+            <h3 data-i18n="service.payroll.title">ТРЗ и работни заплати</h3>
+            <p data-i18n="service.payroll.desc">Изчисляване на възнаграждения, осигуровки, подаване на нормативни документи. Полза: коректно плащане и спазване на трудовото законодателство.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">📅</div>
+            <h3 data-i18n="service.closing.title">Годишно счетоводно приключване</h3>
+            <p data-i18n="service.closing.desc">Подготовка и представяне на годишни отчети и финансови анализи. Полза: увереност пред партньори и контролни органи.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">🧾</div>
+            <h3 data-i18n="service.tax.title">Данъчни декларации</h3>
+            <p data-i18n="service.tax.desc">Подготовка и подаване на данъчни декларации за юридически и физически лица. Полза: минимизиране на риска и оптимизация на данъчните задължения.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">🔄</div>
+            <h3 data-i18n="service.ongoing.title">Текущо счетоводно обслужване</h3>
+            <p data-i18n="service.ongoing.desc">Ежедневна/месечна поддръжка на счетоводството и консултации. Полза: навременни отчети и гъвкава комуникация.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why choose us -->
+    <section id="why" class="why">
+      <div class="container">
+        <h2 data-i18n="why.title">Защо да изберете нас</h2>
+        <div class="features">
+          <div class="feature">
+            <div class="f-icon">🏆</div>
+            <h4>Опит и надеждност</h4>
+            <p data-i18n="feature.experience">Дългогодишна практика и множество доволни клиенти.</p>
+          </div>
+          <div class="feature">
+            <div class="f-icon">🔒</div>
+            <h4>Коректност и конфиденциалност</h4>
+            <p data-i18n="feature.trust">Висок стандарт на защита на клиентските данни.</p>
+          </div>
+          <div class="feature">
+            <div class="f-icon">🤝</div>
+            <h4>Лична комуникация</h4>
+            <p data-i18n="feature.communication">Бърз и човечен контакт с вашия счетоводител.</p>
+          </div>
+          <div class="feature">
+            <div class="f-icon">📚</div>
+            <h4>Актуални познания</h4>
+            <p data-i18n="feature.law">Постоянно следене на промените в българското законодателство.</p>
+          </div>
+          <div class="feature">
+            <div class="f-icon">📍</div>
+            <h4>Локално обслужване</h4>
+            <p data-i18n="feature.local">Работим с клиенти в Пловдив и региона.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 data-i18n="contact.title">Контакти</h2>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <p><strong data-i18n="contact.city">Град:</strong> Пловдив</p>
+            <p><strong data-i18n="contact.phone">Телефон:</strong> <a href="tel:+359000000000">+359 0 000 000</a></p>
+            <p><strong data-i18n="contact.email">Имейл:</strong> <a href="mailto:info@example.com">info@example.com</a></p>
+            <p><strong data-i18n="contact.hours">Работно време:</strong> Пн–Пт 09:00–17:00</p>
+            <p class="muted" data-i18n="contact.info">Свържете се с нас за безплатна първоначална консултация.</p>
+          </div>
+
+          <form id="contactForm" class="contact-form" novalidate action="https://formspree.io/f/your-form-id" method="POST">
+            <!-- Replace the action with your Formspree or FormSubmit endpoint -->
+            <input type="hidden" name="_subject" value="Запитване от уебсайт — Кантора Табакова">
+            <label for="name" data-i18n="form.name">Име</label>
+            <input type="text" id="name" name="name" data-placeholder="form.placeholder.name" placeholder="Вашето име" required>
+
+            <label for="email" data-i18n="form.email">Имейл</label>
+            <input type="email" id="email" name="email" data-placeholder="form.placeholder.email" placeholder="Вашият имейл" required>
+
+            <label for="phone" data-i18n="form.phone">Телефон</label>
+            <input type="tel" id="phone" name="phone" data-placeholder="form.placeholder.phone" placeholder="Телефон (опционално)">
+
+            <label for="message" data-i18n="form.message">Съобщение</label>
+            <textarea id="message" name="message" rows="5" data-placeholder="form.placeholder.message" placeholder="Как можем да помогнем?" required></textarea>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-primary" data-i18n="contact.send">Изпрати</button>
+              <button type="reset" class="btn-secondary" data-i18n="contact.reset">Изчисти</button>
+            </div>
+
+            <p class="form-note muted">Формулярът е клиентски (frontend only). При изпращане ще получите потвърждение на екрана.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> <span data-i18n="contact.footer.copyright">Счетоводна кантора — Лилия Табакова. Всички права запазени.</span></p>
+      <nav class="footer-nav">
+        <a href="#privacy" data-i18n="contact.footer.privacy">Политика за поверителност</a>
+      </nav>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
