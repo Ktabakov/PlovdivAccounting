@@ -31,7 +31,7 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#hero">Кантора Табакова</a>
+      <a class="brand" href="#hero" data-i18n="hero.title.website">Кантора Табакова</a>
       <nav class="main-nav" id="mainNav">
         <a href="#about" data-i18n="nav.about">За нас</a>
         <a href="#services" data-i18n="nav.services">Услуги</a>
@@ -133,32 +133,32 @@
         <div class="features">
           <div class="feature">
             <div class="f-icon">⭐</div>
-            <h4>20+ години опит</h4>
+            <h4 data-i18n="feature.milestone.title">20+ години опит</h4>
             <p data-i18n="feature.milestone">20+ години опит, над 150 доволни клиента</p>
           </div>
           <div class="feature">
             <div class="f-icon">🏆</div>
-            <h4>Опит и надеждност</h4>
+            <h4 data-i18n="feature.experience.title">Опит и надеждност</h4>
             <p data-i18n="feature.experience">Дългогодишна практика и множество доволни клиенти.</p>
           </div>
           <div class="feature">
             <div class="f-icon">🔒</div>
-            <h4>Коректност и конфиденциалност</h4>
+            <h4 data-i18n="feature.trust.title">Коректност и конфиденциалност</h4>
             <p data-i18n="feature.trust">Висок стандарт на защита на клиентските данни.</p>
           </div>
           <div class="feature">
             <div class="f-icon">🤝</div>
-            <h4>Лична комуникация</h4>
+            <h4 data-i18n="feature.communication.title">Лична комуникация</h4>
             <p data-i18n="feature.communication">Бърз и човечен контакт с вашия счетоводител.</p>
           </div>
           <div class="feature">
             <div class="f-icon">📚</div>
-            <h4>Актуални познания</h4>
+            <h4 data-i18n="feature.knowledge.title">Актуални познания</h4>
             <p data-i18n="feature.law">Постоянно следене на промените в българското законодателство.</p>
           </div>
           <div class="feature">
             <div class="f-icon">📍</div>
-            <h4>Локално обслужване</h4>
+            <h4 data-i18n="feature.local.title">Локално обслужване</h4>
             <p data-i18n="feature.local">Работим с клиенти в Пловдив и региона.</p>
           </div>
         </div>
@@ -171,10 +171,16 @@
         <h2 data-i18n="contact.title">Контакти</h2>
         <div class="contact-grid">
           <div class="contact-info">
-            <p><strong data-i18n="contact.city">Град:</strong> Пловдив</p>
+           <p>
+             <strong data-i18n="contact.city">Град:</strong> 
+             <span data-i18n="contact.cityname">Пловдив</span>
+            </p>
             <p><strong data-i18n="contact.phone">Телефон:</strong> <a href="tel:+35989505664">+35989505664</a></p>
             <p><strong data-i18n="contact.email">Имейл:</strong> <a href="mailto:liliatabakova34@gmail.com">liliatabakova34@gmail.com</a></p>
-            <p><strong data-i18n="contact.hours">Работно време:</strong> Пн–Пт 09:00–17:00</p>
+            <p>
+             <strong data-i18n="contact.hours">Работно време:</strong> 
+             <span data-i18n="contact.hours.times">Пн–Пт 09:00–17:00</span>
+            </p>
             <p class="muted" data-i18n="contact.info">Свържете се с нас за безплатна първоначална консултация.</p>
           </div>
 
@@ -182,23 +188,23 @@
             <!-- Replace the action with your Formspree or FormSubmit endpoint -->
             <input type="hidden" name="_subject" value="Запитване от уебсайт — Кантора Табакова">
             <label for="name" data-i18n="form.name">Име</label>
-            <input type="text" id="name" name="name" data-placeholder="form.placeholder.name" placeholder="Вашето име" required>
+            <input type="text" id="name" name="name" data-placeholder="form.placeholder.name" required>
 
             <label for="email" data-i18n="form.email">Имейл</label>
-            <input type="email" id="email" name="email" data-placeholder="form.placeholder.email" placeholder="Вашият имейл" required>
+            <input type="email" id="email" name="email" data-placeholder="form.placeholder.email" required>
 
             <label for="phone" data-i18n="form.phone">Телефон</label>
-            <input type="tel" id="phone" name="phone" data-placeholder="form.placeholder.phone" placeholder="Телефон (опционално)">
+            <input type="tel" id="phone" name="phone" data-placeholder="form.placeholder.phone"
 
             <label for="message" data-i18n="form.message">Съобщение</label>
-            <textarea id="message" name="message" rows="5" data-placeholder="form.placeholder.message" placeholder="Как можем да помогнем?" required></textarea>
+            <textarea id="message" name="message" rows="5" data-placeholder="form.placeholder.message" required></textarea>
 
             <div class="form-actions">
               <button type="submit" class="btn-primary" data-i18n="contact.send">Изпрати</button>
               <button type="reset" class="btn-secondary" data-i18n="contact.reset">Изчисти</button>
             </div>
 
-            <p class="form-note muted">При изпращане ще получите потвърждение на екрана.</p>
+            <p class="form-note muted" data-i18n="contact.submit">При изпращане ще получите потвърждение на екрана.</p>
           </form>
         </div>
       </div>
