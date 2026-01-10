@@ -134,6 +134,9 @@ document.addEventListener('DOMContentLoaded', function(){
       'form.name':'Name',
       'form.email':'Email',
       'form.phone':'Phone',
+      'form.validation':'Please fill in all required fields.',
+      'form.success':'Thank you! Your message has been sent.',
+      'form.error':'Error sending message. Please try again later.',
       'form.message':'Message',
       'contact.submit':'Upon submission, you will receive an on-screen confirmation.',
       'contact.footer.copyright':'© <span id="year">2024</span> Accounting Office — Liliya Tabakova. All rights reserved.',
@@ -167,57 +170,64 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 
-  // Contact form behavior (frontend: supports Formspree/FormSubmit)
   var contactForm = document.getElementById('contactForm');
-  contactForm && contactForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    // Basic validation
-    var name = document.getElementById('name').value.trim();
-    var email = document.getElementById('email').value.trim();
-    var message = document.getElementById('message').value.trim();
-    if(!name || !email || !message){
-      showToast('Моля попълнете всички задължителни полета.');
-      return;
-    }
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
 
-    var action = contactForm.getAttribute('action') || '';
-    if(!action || action.indexOf('your-form-id') !== -1){
-      showToast('Формулярът не е конфигуриран. Заменете action в кода с Formspree или FormSubmit endpoint.');
-      return;
-    }
+      var submitBtn = contactForm.querySelector('button[type="submit"]');
+      var name = document.getElementById('name').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var message = document.getElementById('message').value.trim();
 
-    // Prepare form data
-    var formData = new FormData(contactForm);
+      var msgValidation = (lang === 'en') ? translations.en['form.validation'] : 'Моля попълнете всички задължителни полета.';
+      var msgSuccess = (lang === 'en') ? translations.en['form.success'] : 'Благодарим! Вашето съобщение беше изпратено.';
+      var msgError = (lang === 'en') ? translations.en['form.error'] : 'Грешка при изпращане. Моля опитайте по-късно.';
 
-    // Use fetch to POST to the configured action. Works on GitHub Pages with Formspree/FormSubmit.
-    fetch(action, {
-      method: 'POST',
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
+      if (!name || !email || !message) {
+        showToast(msgValidation, '#dc3545');
+        return;
       }
-    }).then(function(response){
-      if(response.ok){
-        showToast('Благодарим! Вашето съобщение беше изпратено.');
-        contactForm.reset();
-      } else {
-        response.json().then(function(data){
-          showToast(data && data.error ? data.error : 'Грешка при изпращане. Моля опитайте по-късно.');
-        }).catch(function(){
-          showToast('Неуспешно изпращане. Моля опитайте по-късно.');
-        });
-      }
-    }).catch(function(){
-      showToast('Възникна мрежова грешка. Моля проверете връзката си.');
+
+      submitBtn.disabled = true;
+      var originalBtnText = submitBtn.textContent;
+      submitBtn.textContent = (lang === 'en') ? 'Sending...' : 'Изпращане...';
+
+      var action = contactForm.getAttribute('action');
+      var formData = new FormData(contactForm);
+
+      fetch(action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(response) {
+        if (response.ok) {
+          showToast(msgSuccess, '#28a745');
+          contactForm.reset();
+        } else {
+          showToast(msgError, '#dc3545');
+        }
+      })
+      .catch(function() {
+        showToast(msgError, '#dc3545');
+      })
+      .finally(function() {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+      });
     });
-  });
+  } 
 
-  function showToast(text){
+  // --- 5. TOAST FUNCTION ---
+  function showToast(text, bgColor) {
     var t = document.getElementById('toast');
+    if (!t) return;
     t.textContent = text;
+    t.style.backgroundColor = bgColor || '#333';
     t.style.display = 'block';
-    setTimeout(function(){ t.style.display = 'none'; }, 5000);
+    setTimeout(function() {
+      t.style.display = 'none';
+    }, 5000);
   }
 });
-
-/* End of file */

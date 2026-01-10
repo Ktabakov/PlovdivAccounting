@@ -285,7 +285,7 @@
     <!-- CONTACT SECTION -->
     <section id="contact" class="contact-section">
       <div class="contact-container">
-        <h2 class="contact-title" data-i18n="contact.title">Контакти</h2>
+        <h2 class="contact-title" data-i18n="contact.title">Контакт</h2>
 
         <div class="contact-content">
           <div class="contact-info">
@@ -307,22 +307,22 @@
           <form id="contactForm" class="contact-form" action="https://formspree.io/f/mdaanwkg" method="post">
             <div class="form-group">
               <label for="name" class="form-label" data-i18n="form.name">Име</label>
-              <input type="text" id="name" name="name" required class="form-input" data-i18n-placeholder="form.placeholder.name">
+              <input type="text" id="name" name="name" required class="form-input" >
             </div>
 
             <div class="form-group">
               <label for="email" class="form-label" data-i18n="form.email">Имейл</label>
-              <input type="email" id="email" name="email" required class="form-input" data-i18n-placeholder="form.placeholder.email">
+              <input type="email" id="email" name="email" required class="form-input" >
             </div>
 
             <div class="form-group">
               <label for="subject" class="form-label" data-i18n="form.subject">Тема</label>
-              <input type="text" id="subject" name="subject" required class="form-input" data-i18n-placeholder="form.placeholder.subject">
+              <input type="text" id="subject" name="subject" required class="form-input" >
             </div>
 
             <div class="form-group">
               <label for="message" class="form-label" data-i18n="form.message">Съобщение</label>
-              <textarea id="message" name="message" required class="form-textarea" data-i18n-placeholder="form.placeholder.message"></textarea>
+              <textarea id="message" name="message" required class="form-textarea" ></textarea>
             </div>
 
             <div class="form-buttons">
@@ -330,7 +330,9 @@
               <button type="reset" class="form-btn form-btn-reset" data-i18n="form.reset">Изчисти</button>
             </div>
 
+            <p id="formStatus" style="display:none; margin-top: 15px; font-weight: bold;"></p>
             <p class="form-note" data-i18n="form.note">При изпращане ще получите потвърждение на екрана.</p>
+            <div id="toast" style="display:none; position: fixed; bottom: 20px; right: 20px; background: #28a745; color: white; padding: 15px 25px; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 1000;"></div>
           </form>
         </div>
       </div>
