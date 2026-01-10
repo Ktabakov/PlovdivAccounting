@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function(){
       'service.tax.title':'Tax Returns',
       'service.tax.desc':'Preparation and filing of annual and monthly tax returns for individuals and legal entities, ensuring accurate reporting of income and expenses while minimizing financial risks.',
       'service.ongoing.title':'Ongoing Services',
-      'service.ongoing.desc':'Monthly accounting services for freelancers and SMEs, ensuring accurate bookkeeping, precise recording of financial transactions, and full legal compliance.',
+      'service.ongoing.desc':'Accounting services for self-employed individuals and small businesses. I ensure precise financial reporting and strict compliance with current legislation.',
       'service.consult.title':'Consultations',
       'service.consult.desc':'Expert advice on accounting, taxes, and labor law. I assist with social security calculations and income tax issues, offering easy document exchange via Viber and email.',
       'feature.milestone.title':'20+ years of experience',
