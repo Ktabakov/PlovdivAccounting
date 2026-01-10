@@ -330,7 +330,7 @@ nav a:hover {
   max-width: 40rem;
   line-height: 1.7;
   
-  /* Modern Glassmorphism: Darker and more blur for contrast */
+  /* Modern Glassmorphism */
   background: rgba(15, 23, 42, 0.4); 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -339,8 +339,28 @@ nav a:hover {
   border-radius: 0.75rem;
   border-left: 4px solid var(--color-accent-gold);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+  /* --- ADDED FOR ANIMATION --- */
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), background 0.4s ease;
+  will-change: transform;
+  cursor: default;
 }
 
+/* THE HOVER STATE */
+.hero-description:hover {
+  /* Subtle move to the right */
+  transform: translateX(24px);
+  
+  /* Optional: Slightly brighten the glass effect on hover for extra polish */
+  background: rgba(15, 23, 42, 0.5);
+}
+
+/* Mobile check: Disable the move on touch screens to avoid layout jitter */
+@media (max-width: 768px) {
+  .hero-description:hover {
+    transform: none;
+  }
+}
 /* THE OVERLAY (Ensures text stays readable no matter the image) */
 .hero-gradient {
   position: absolute;
