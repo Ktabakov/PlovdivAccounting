@@ -757,21 +757,40 @@ nav a:hover {
 }
 
 /* Why section grid - 3 columns for 3 rows */
-#why > div > div:last-child {
+/* Feature grid used on index.html (class-driven, responsive)
+   Use a class so we can control layout from CSS rather than inline styles. */
+.feature-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  width: 100%;
 }
 
 @media (max-width: 1024px) {
-  #why > div > div:last-child {
+  .feature-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 640px) {
-  #why > div > div:last-child {
+  .feature-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Prevent feature content from overflowing on very small devices */
+.feature {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Reduce padding on small screens to avoid elements sticking out */
+@media (max-width: 480px) {
+  .feature {
+    padding: 1rem;
+  }
+  .feature div[style] {
+    font-size: 2rem !important; /* shrink inline icon sizes if necessary */
   }
 }
 
