@@ -2,8 +2,9 @@
 // Comments included for clarity.
 
 document.addEventListener('DOMContentLoaded', function(){
-  // Set current year in footer
-  document.getElementById('year').textContent = new Date().getFullYear();
+  // Set current year in footer (guard if element missing on some pages)
+  var yearEl = document.getElementById('year');
+  if(yearEl) yearEl.textContent = new Date().getFullYear();
 
   // Mobile menu toggle with proper class handling
   var menuToggle = document.getElementById('menuToggle');
@@ -26,6 +27,8 @@ document.addEventListener('DOMContentLoaded', function(){
   var lang = 'bg';
   var translations = {
     en: {
+      'nav.title':'Plovdiv Accounting',
+      'nav.subtitle':'Expert Financial Advice',
       'nav.about':'About',
       'nav.services':'Services',
       'nav.why':'Why Us',
@@ -110,6 +113,20 @@ document.addEventListener('DOMContentLoaded', function(){
       'feature.local.title':'Local Service',
       'feature.practical.title':'Practical Solutions',
       'feature.practical':'Individual approach and clear, applicable advice for your business.',
+      // Privacy page translations
+      'privacy.title':'Privacy Policy',
+      'privacy.what.title':'What We Collect',
+      'privacy.what.text':'We collect names, email addresses, phone numbers and messages from client forms. These data are used only for communication and providing accounting services.',
+      'privacy.use.title':'How We Use Data',
+      'privacy.use.text':'Your data is used to respond to your inquiries, provide accounting services and communicate updates. We never sell or disclose your data to third parties without your consent.',
+      'privacy.legal.title':'Legal Requirements',
+      'privacy.legal.text':'We comply with GDPR, the Bulgarian Personal Data Protection Act and all applicable data protection laws. Your data is stored securely and deleted in accordance with legal retention requirements.',
+      'privacy.protection.title':'Data Protection',
+      'privacy.protection.text':'We have implemented industry-standard measures to protect your data from unauthorized access, alteration, and disclosure. All financial information is handled with a high degree of confidentiality.',
+      'privacy.contact.title':'Contact Us',
+      'privacy.contact.text':'If you have questions about our privacy policy or how we process your data, please contact us:',
+      'privacy.contact.email':'liliatabakova34@gmail.com',
+      'privacy.contact.phone':'+359 89 8505 664',
       'contact.city':'City:',
       'contact.cityname':'Plovdiv',
       'contact.phone':'Phone:',
@@ -127,13 +144,17 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   };
 
-  document.getElementById('langToggle').addEventListener('click', function(){
-    lang = (lang === 'bg') ? 'en' : 'bg';
-    this.textContent = (lang === 'bg') ? 'EN' : 'BG';
-    // apply translations when switching to English
-    if(lang === 'en') applyTranslations(translations.en);
-    else location.reload(); // quick reset to Bulgarian static text
-  });
+  // Language toggle - only attach if button exists on the page
+  var langToggleBtn = document.getElementById('langToggle');
+  if(langToggleBtn){
+    langToggleBtn.addEventListener('click', function(){
+      lang = (lang === 'bg') ? 'en' : 'bg';
+      this.textContent = (lang === 'bg') ? 'EN' : 'BG';
+      // apply translations when switching to English
+      if(lang === 'en') applyTranslations(translations.en);
+      else location.reload(); // quick reset to Bulgarian static text
+    });
+  }
 
   function applyTranslations(map){
     // Translate all elements with data-i18n attribute
@@ -142,9 +163,9 @@ document.addEventListener('DOMContentLoaded', function(){
       if(map[key]) el.innerHTML = map[key];
     });
     
-    // Translate form input placeholders using data-placeholder
-    document.querySelectorAll('[data-placeholder]').forEach(function(el){
-      var key = el.getAttribute('data-placeholder');
+    // Translate form input placeholders using data-i18n-placeholder
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
+      var key = el.getAttribute('data-i18n-placeholder');
       if(map[key]) el.placeholder = map[key];
     });
   }
