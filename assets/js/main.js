@@ -203,6 +203,13 @@ document.addEventListener('DOMContentLoaded', function(){
       })
       .then(function(response) {
         if (response.ok) {
+          if (typeof gtag === 'function') {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-16838803082/AW3XCPqR-pUaEPqR-pUa',
+                'value': 1.0,
+                'currency': 'USD'
+            });
+          }
           showToast(msgSuccess, '#28a745');
           contactForm.reset();
         } else {
