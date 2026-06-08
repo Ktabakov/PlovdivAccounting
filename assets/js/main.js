@@ -45,7 +45,9 @@ document.addEventListener('DOMContentLoaded', function(){
       'about.p1':'For over 20 years, I have worked personally with businesses and entrepreneurs in the region, striving for clarity, precision, and integrity in every financial step. My goal is to provide a solid foundation so that you can make confident and informed decisions for your business.',
       'about.p2':'I combine established accounting practices with modern digital tools to deliver fast and reliable service. Every client receives personalized attention and support, built on my years of professional experience and dedication.',
       'services.title':'Services',
+      'services.heading':'Accounting Services in Plovdiv',
       'why.title':'Why Choose Us',
+      'why.heading':'A Reliable Accountant in Plovdiv',
       'testimonial.quote':'Precision. Correctness. Trust.',
       'testimonial.name':'Lilia Tabakova',
       'testimonial.role':'Chief Accountant',
@@ -100,8 +102,8 @@ document.addEventListener('DOMContentLoaded', function(){
       'service.consult.desc':'Expert advice on accounting, taxes, and labor law. I assist with social security calculations and income tax issues, offering easy document exchange via Viber and email.',
       'feature.milestone.title':'20+ years of experience',
       'feature.milestone':'20+ years of experience, over 150 satisfied clients',
-      'feature.experience.title':'Decades of practice and proven trust from my clients.',
-      'feature.experience':'Years of experience and many satisfied clients.',
+      'feature.experience.title':'Experience & Reliability',
+      'feature.experience':'Decades of practice and proven trust from my clients.',
       'feature.trust':'High standard of client data protection.',
       'feature.trust.title':'Integrity and Confidentiality',
       'feature.communication':'Quick and direct contact with your accountant.',
@@ -150,6 +152,7 @@ document.addEventListener('DOMContentLoaded', function(){
     langToggleBtn.addEventListener('click', function(){
       lang = (lang === 'bg') ? 'en' : 'bg';
       this.textContent = (lang === 'bg') ? 'EN' : 'BG';
+      document.documentElement.lang = lang;
       // apply translations when switching to English
       if(lang === 'en') applyTranslations(translations.en);
       else location.reload(); // quick reset to Bulgarian static text
