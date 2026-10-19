@@ -34,12 +34,18 @@ document.addEventListener('DOMContentLoaded', function(){
       'nav.why':'Why Us',
       'nav.contact':'Contact',
       'nav.cta':'Contact Us',
-      'hero.title.line1':'Excellence in',
-      'hero.title.line2':'financial management',
-      'hero.description':'Bespoke accounting solutions for Plovdiv businesses. Precision, integrity, and clarity at every step.',
+      'hero.title.line1':'Accountant in Plovdiv',
+      'hero.title.line2':'for small businesses and the self-employed',
+      'hero.description':'Accounting, payroll and tax returns with a personal approach — over 20 years of experience. The first consultation is free.',
       'hero.approach':'Our approach',
       'hero.subtitle':'Professional accounting and payroll services for SMEs and entrepreneurs.',
-      'hero.cta':'Contact us',
+      'hero.cta':'Free consultation',
+      'hero.call':'Call: +359 89 8505 664',
+      'bar.call':'Call',
+      'contact.viber.text':'Message me on Viber',
+      'contact.appointment':'Plovdiv · meetings by appointment',
+      'form.email.optional':'Email (optional)',
+      'form.message.optional':'How can I help? (optional)',
       'hero.services':'Our services',
       'about.title':'Over 20 Years of Professional Experience',
       'about.p1':'For over 20 years, I have worked personally with businesses and entrepreneurs in the region, striving for clarity, precision, and integrity in every financial step. My goal is to provide a solid foundation so that you can make confident and informed decisions for your business.',
@@ -68,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function(){
       'footer.hours':'Mon - Fri: 09:00 - 18:00',
       'footer.terms':'Terms and Conditions',
       'cta.title':'Have questions about your accounting?',
-      'cta.button':'Book a Consultation',
+      'cta.button':'Free consultation',
       'contact.phone.label':'Phone',
       'contact.email.label':'Email',
       'contact.address.label':'Address',
@@ -80,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function(){
       'form.message':'Message',
       'form.submit':'Send',
       'form.reset':'Clear',
-      'form.note':'Upon submission, you will receive an on-screen confirmation.',
+      'form.note':'I will get back to you as soon as possible.',
       'form.placeholder.name':'Enter your name',
       'form.placeholder.email':'Enter your email',
       'form.placeholder.subject':'Enter subject',
@@ -131,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function(){
       'contact.phone':'Phone:',
       'contact.email':'Email:',
       'contact.hours':'Working hours:',
-      'contact.hours.times':'Mon–Fri 09:00–17:00',
+      'contact.hours.times':'Mon–Fri 09:00–18:00',
       'contact.info':'Contact us for a free initial consultation.',
       'form.name':'Name',
       'form.email':'Email',
@@ -181,13 +187,13 @@ document.addEventListener('DOMContentLoaded', function(){
       var submitBtn = contactForm.querySelector('button[type="submit"]');
       var name = document.getElementById('name').value.trim();
       var email = document.getElementById('email').value.trim();
-      var message = document.getElementById('message').value.trim();
+      var phone = document.getElementById('phone').value.trim();
 
       var msgValidation = (lang === 'en') ? translations.en['form.validation'] : 'Моля попълнете всички задължителни полета.';
       var msgSuccess = (lang === 'en') ? translations.en['form.success'] : 'Благодарим! Вашето съобщение беше изпратено.';
       var msgError = (lang === 'en') ? translations.en['form.error'] : 'Грешка при изпращане. Моля опитайте по-късно.';
 
-      if (!name || !email || !message) {
+      if (!name || !phone) {
         showToast(msgValidation, '#dc3545');
         return;
       }

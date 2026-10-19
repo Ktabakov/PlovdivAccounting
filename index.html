@@ -130,16 +130,19 @@
           </div> -->
 
           <h1 class="hero-title">
-            <span data-i18n="hero.title.line1">Отличие във</span><br/>
-            <span data-i18n="hero.title.line2">финансовото управление</span>
+            <span data-i18n="hero.title.line1">Счетоводител в Пловдив</span><br/>
+            <span data-i18n="hero.title.line2">за малки фирми и самоосигуряващи се</span>
           </h1>
-          <p class="hero-description" data-i18n="hero.description">Професионални счетоводни решения за бизнеса в Пловдив. Прецизност, коректност и яснота на всяка стъпка.</p>
+          <p class="hero-description" data-i18n="hero.description">Счетоводство, ТРЗ и данъчни декларации с личен подход — над 20 години опит. Първата консултация е безплатна.</p>
           <div class="hero-buttons">
-            <button class="hero-btn hero-btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="hero.cta">
-              Резервирайте консултация
+            <button class="hero-btn hero-btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+              <span data-i18n="hero.cta">Безплатна консултация</span>
               <span class="material-symbols-outlined">event_available</span>
             </button>
-            <button class="hero-btn hero-btn-secondary" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})" data-i18n="hero.approach">Нашият подход</button>
+            <a class="hero-btn hero-btn-secondary" href="tel:+359898505664">
+              <span class="material-symbols-outlined">call</span>
+              <span data-i18n="hero.call">Обадете се: +359 89 8505 664</span>
+            </a>
           </div>
         </div>
       </div>
@@ -151,7 +154,7 @@
         <div class="testimonial-content">
           <div class="testimonial-left">
             <div class="testimonial-image">
-              <img alt="Лилия Табакова — главен счетоводител, Пловдив" src="assets/images/tabakova.webp" width="549" height="549" loading="lazy" decoding="async">
+              <img alt="Лилия Табакова — главен счетоводител, Пловдив" src="assets/images/tabakova.webp" width="549" height="549" decoding="async">
               <div class="testimonial-badge">
                 <span class="material-symbols-outlined">verified</span>
               </div>
@@ -331,7 +334,7 @@
         <!-- <p class="cta-desc" data-i18n="cta.desc">Присъединете се към най-успешните фирми в Пловдив и преживейте партньорски подход към счетоводството.</p> -->
 
         <div class="cta-buttons">
-          <button class="cta-btn cta-btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="cta.button">Резервирайте консултация</button>
+          <button class="cta-btn cta-btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="cta.button">Безплатна консултация</button>
           <!-- <button class="cta-btn cta-btn-secondary" data-i18n="cta.packages">Вижте пакети</button> -->
         </div>
       </div>
@@ -350,43 +353,49 @@
             </div>
 
             <div class="contact-group">
+              <label class="contact-label">Viber</label>
+              <a href="viber://chat?number=%2B359898505664" class="contact-text" data-i18n="contact.viber.text">Пишете ми във Viber</a>
+            </div>
+
+            <div class="contact-group">
               <label class="contact-label" data-i18n="contact.email.label">Имейл</label>
               <a href="mailto:liliatabakova34@gmail.com" class="contact-text">liliatabakova34@gmail.com</a>
             </div>
             <div class="contact-group">
               <label class="contact-label" data-i18n="contact.hours.label">Работно време</label>
-              <p class="contact-text" data-i18n="contact.hours.value">Пн - Пт: 09:00 - 18:00</p>
+              <p class="contact-text"><span data-i18n="contact.hours.value">Пн - Пт: 09:00 - 18:00</span><br><span data-i18n="contact.appointment">Пловдив · срещи по предварителна уговорка</span></p>
             </div>
           </div>
 
           <form id="contactForm" class="contact-form" action="https://formspree.io/f/mgoowroe" method="post">
+            <input type="hidden" name="_subject" value="Ново запитване от plovdivaccounting.com">
+
             <div class="form-group">
               <label for="name" class="form-label" data-i18n="form.name">Име</label>
-              <input type="text" id="name" name="name" required class="form-input" >
+              <input type="text" id="name" name="name" required autocomplete="name" class="form-input" >
             </div>
 
             <div class="form-group">
-              <label for="email" class="form-label" data-i18n="form.email">Имейл</label>
-              <input type="email" id="email" name="email" required class="form-input" >
+              <label for="phone" class="form-label" data-i18n="form.phone">Телефон</label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel" class="form-input" >
             </div>
 
             <div class="form-group">
-              <label for="subject" class="form-label" data-i18n="form.subject">Тема</label>
-              <input type="text" id="subject" name="subject" required class="form-input" >
+              <label for="email" class="form-label" data-i18n="form.email.optional">Имейл (по желание)</label>
+              <input type="email" id="email" name="email" autocomplete="email" class="form-input" >
             </div>
 
             <div class="form-group">
-              <label for="message" class="form-label" data-i18n="form.message">Съобщение</label>
-              <textarea id="message" name="message" required class="form-textarea" ></textarea>
+              <label for="message" class="form-label" data-i18n="form.message.optional">С какво мога да помогна? (по желание)</label>
+              <textarea id="message" name="message" class="form-textarea" ></textarea>
             </div>
 
             <div class="form-buttons">
               <button type="submit" class="form-btn form-btn-submit" data-i18n="form.submit">Изпрати</button>
-              <button type="reset" class="form-btn form-btn-reset" data-i18n="form.reset">Изчисти</button>
             </div>
 
             <p id="formStatus" style="display:none; margin-top: 15px; font-weight: bold;"></p>
-            <p class="form-note" data-i18n="form.note">При изпращане ще получите потвърждение на екрана.</p>
+            <p class="form-note" data-i18n="form.note">Ще се свържа с Вас възможно най-скоро.</p>
             <div id="toast" style="display:none; position: fixed; bottom: 20px; right: 20px; background: #28a745; color: white; padding: 15px 25px; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 1000;"></div>
           </form>
         </div>
@@ -445,6 +454,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Sticky call bar (phones only) -->
+  <div class="mobile-bar">
+    <a class="mobile-bar-btn mobile-bar-call" href="tel:+359898505664"><span class="material-symbols-outlined">call</span><span data-i18n="bar.call">Обадете се</span></a>
+    <a class="mobile-bar-btn mobile-bar-viber" href="viber://chat?number=%2B359898505664"><span class="material-symbols-outlined">chat</span>Viber</a>
+  </div>
 
   <!-- Scripts -->
   <script src="assets/js/main.js"></script>
